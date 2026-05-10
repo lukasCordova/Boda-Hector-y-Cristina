@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda Héctor & Cristina</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Paleta de Colores Blanca + Lila */
+        :root {
+            --morado-oscuro: #743B80; 
+            --lila-suave: #B88BC4;
+            --fondo-blanco: #FCFBFF;
+            --texto-principal: #4A4555;
+            --blanco-puro: #FFFFFF;
+        }
+
+        /* Estilos Base */
+        body {
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: var(--fondo-blanco);
+            color: var(--texto-principal);
+            text-align: center;
+        }
+
+        .contenedor {
+            max-width: 480px; 
+            margin: 0 auto;
+            background-color: var(--blanco-puro);
+            box-shadow: 0 0 20px rgba(116, 59, 128, 0.1); 
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--morado-oscuro);
+            font-weight: 600;
+        }
+
+        /* Iconos */
+        .icono {
+            color: var(--morado-oscuro);
+            margin-bottom: 10px;
+            stroke-width: 1.5px;
+        }
+
+        /* Slider de Fotos */
+        .slider-contenedor {
+            position: relative;
+            width: 100%;
+            height: 65vh; 
+            overflow: hidden;
+            background-color: var(--lila-suave);
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out; 
+        }
+
+        .slide.activo { opacity: 1; }
+
+        .texto-encima {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            color: var(--blanco-puro);
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+            z-index: 10;
+        }
+
+        .texto-encima h1 {
+            color: var(--blanco-puro);
+            font-size: 3.5rem;
+            margin: 0;
+            line-height: 0.9;
+        }
+
+        /* Secciones Generales */
+        .seccion {
+            padding: 50px 30px;
+            border-bottom: 1px solid rgba(184, 139, 196, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--morado-oscuro);
+            color: var(--blanco-puro);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover { background-color: var(--lila-suave); }
+        .btn-whatsapp { background-color: #25D366; }
+        .btn-whatsapp:hover { background-color: #1DA851; }
+
+        /* Contador */
+        #contador {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .caja-tiempo {
+            background-color: var(--fondo-blanco);
+            border: 1px solid var(--lila-suave);
+            padding: 15px 10px;
+            border-radius: 8px;
+            min-width: 60px;
+        }
+
+        .caja-tiempo span {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--morado-oscuro);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .caja-tiempo small {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Estilos del Itinerario */
+        .itinerario {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .evento h3 { margin: 5px 0; }
+        .evento p { margin: 0; }
+        .linea-divisoria {
+            width: 1px;
+            height: 30px;
+            background-color: var(--lila-suave);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        
+        <header class="slider-contenedor">
+            <img src="img/slide1.jpg" class="slide activo" alt="Foto 1">
+            <img src="img/slide2.jpg" class="slide" alt="Foto 2">
+            <img src="img/slide3.jpg" class="slide" alt="Foto 3">
+            <img src="img/slide4.jpg" class="slide" alt="Foto 4">
+            <img src="img/slide5.jpg" class="slide" alt="Foto 5">
+            
+            <div class="texto-encima">
+                <i data-lucide="heart" style="color: white; width: 32px; height: 32px;"></i>
+                <h1>Héctor<br>&<br>Cristina</h1>
+            </div>
+        </header>
+
+        <section class="seccion">
+            <h2>El Gran Día</h2>
+            <p>15 de Noviembre de 2026</p>
+            <div id="contador">
+                <div class="caja-tiempo"><span id="dias">00</span><small>Días</small></div>
+                <div class="caja-tiempo"><span id="horas">00</span><small>Hrs</small></div>
+                <div class="caja-tiempo"><span id="minutos">00</span><small>Min</small></div>
+                <div class="caja-tiempo"><span id="segundos">00</span><small>Seg</small></div>
+            </div>
+        </section>
+
+        <section class="seccion" style="background-color: var(--fondo-blanco);">
+            <i data-lucide="map-pin" class="icono" width="40" height="40"></i>
+            <h2>Dónde y Cuándo</h2>
+            <h3>Hacienda "La Amatista"</h3>
+            <p>Ceremonia y Recepción se realizarán en este hermoso lugar.</p>
+            <p><strong>Llegada:</strong> 17:00 hrs<br><strong>Ceremonia:</strong> 17:30 hrs</p>
+            <p>Av. Las Encinas 123, Valle Hermoso.</p>
+            <a href="https://maps.google.com" target="_blank" class="btn">Ver en Google Maps</a>
+        </section>
+
+        <!-- ITINERARIO, ctrl + } para comentar -->
+        <section class="seccion">
+            <h2>Itinerario</h2>
+            <div class="itinerario">
+                <div class="evento">
+                    <i data-lucide="church" class="icono" width="32" height="32"></i>
+                    <h3>Ceremonia</h3>
+                    <p>17:30 hrs</p>
+                </div>
+                <div class="linea-divisoria"></div>
+                <div class="evento">
+                    <i data-lucide="camera" class="icono" width="32" height="32"></i>
+                    <h3>Fotos y Cóctel</h3>
+                    <p>18:30 hrs</p>
+                </div>
+                <div class="linea-divisoria"></div>
+                <div class="evento">
+                    <i data-lucide="utensils" class="icono" width="32" height="32"></i>
+                    <h3>Cena</h3>
+                    <p>20:00 hrs</p>
+                </div>
+                <div class="linea-divisoria"></div>
+                <div class="evento">
+                    <i data-lucide="music" class="icono" width="32" height="32"></i>
+                    <h3>Fiesta</h3>
+                    <p>22:00 hrs</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion" style="background-color: var(--fondo-blanco);">
+            <i data-lucide="info" class="icono" width="40" height="40"></i>
+            <h2>Detalles</h2>
+            <p><strong>Dresscode: Formal</strong></p>
+            <p>Nos encantaría verlos luciendo increíbles.<br>(Por favor, reservar el color blanco para la novia).</p>
+            <br>
+            <p><em>*Adoramos a los niños, pero hemos decidido que nuestra boda sea una celebración solo para adultos.*</em></p>
+        </section>
+
+        <section class="seccion">
+            <i data-lucide="gift" class="icono" width="40" height="40"></i>
+            <h2>Mesa de Regalos</h2>
+            <p>El mejor regalo es tu presencia. Sin embargo, si deseas hacernos un detalle, contamos con esta opción:</p>
+            <p><strong>Cuenta Bancaria:</strong> 1234-5678-90<br><strong>Banco:</strong> Internacional<br><strong>A nombre de:</strong> Héctor y Cristina</p>
+        </section>
+
+        <section class="seccion" style="background-color: var(--fondo-blanco);">
+            <i data-lucide="message-circle" class="icono" width="40" height="40"></i>
+            <h2>Confirmación</h2>
+            <p>Tu presencia es vital para nosotros. Por favor, confírmanos antes del 15 de Octubre.</p>
+            <a href="https://wa.me/56912345678?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda.%20" class="btn btn-whatsapp" target="_blank">Confirmar por WhatsApp</a>
+        </section>
+
+    </div>
+
+    <script>
+        // Inicializar los iconos de Lucide
+        lucide.createIcons();
+
+        // --- LÓGICA DEL SLIDER ---
+        const slides = document.querySelectorAll('.slide');
+        let slideActual = 0;
+
+        function cambiarSlide() {
+            slides[slideActual].classList.remove('activo');
+            slideActual = (slideActual + 1) % slides.length;
+            slides[slideActual].classList.add('activo');
+        }
+        // Cambia la foto cada 4 segundos
+        setInterval(cambiarSlide, 4000);
+
+
+        // --- LÓGICA DEL CONTADOR ---
+        const fechaBoda = new Date("Nov 15, 2026 17:00:00").getTime();
+
+        const intervalo = setInterval(function() {
+            const ahora = new Date().getTime();
+            const distancia = fechaBoda - ahora;
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("dias").innerText = dias.toString().padStart(2, '0');
+            document.getElementById("horas").innerText = horas.toString().padStart(2, '0');
+            document.getElementById("minutos").innerText = minutos.toString().padStart(2, '0');
+            document.getElementById("segundos").innerText = segundos.toString().padStart(2, '0');
+
+            if (distancia < 0) {
+                clearInterval(intervalo);
+                document.getElementById("contador").innerHTML = "<h3>¡Llegó el gran día!</h3>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
