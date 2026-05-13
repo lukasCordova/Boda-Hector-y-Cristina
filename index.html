@@ -54,7 +54,13 @@
             width: 100%; height: 100%; object-fit: cover; border-radius: 2px;
             transition: opacity 0.5s ease-in;
         }
-
+        .caja-nota {
+            background-color: var(--lila-bg); 
+            padding: 25px; border-radius: 15px; 
+            border: 1px dashed var(--lila-soft); 
+            margin: 0 auto; 
+            max-width: 550px;
+        }
         /* ÍCONOS SVG ANIMADOS */
         .icon-container { margin-bottom: 25px; }
         .icon-container svg {
@@ -66,7 +72,11 @@
         
         /* SECCIÓN PADRES */
         .padres-grid {
-            display: flex; flex-direction: column; gap: 25px; margin-top: 25px;
+            display: flex;
+            flex-direction: row; 
+            justify-content: center;
+            gap: 25px;
+            margin-top: 25px;
         }
         .padres-nombres { font-size: 1.5rem; color: var(--texto-violeta); }
 
@@ -124,13 +134,19 @@
         <h2 style=" line-height: 1.2;">Con la bendición de Dios<br>y nuestros queridos padres</h2>
         
         <div class="padres-grid">
-            <div>
+            <div class="caja-nota" style="margin: 0 3vw;">
                 <h3 style="color: var(--lila-soft); font-style: italic;">Padres de la Novia</h3>
                 <p class="padres-nombres">Eliana Valdés Bravo<br>Juan Muñóz Garrido</p>
+                <br>
+                <h3 style="font-size: 1.6rem; color: var(--lila-soft); font-style: italic;">Padrinos de la novia</h3>
+                <p class="padres-nombres" style="font-size: 1.3rem;">Nicol Salas Valdés<br>Javier Monje Rodríguez</p>
             </div>
-            <div>
+            <div class="caja-nota" style="margin: 0 3vw;">
                 <h3 style="color: var(--lila-soft); font-style: italic;">Padres del Novio</h3>
                 <p class="padres-nombres">Georgina Morales Fre<br>Héctor Espinosa Quiñones <span><svg version="1.1" id="wayside_cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1.2rem" height="1.4rem" viewBox="30 -25 200 270" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="0.00256"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="1.536"></g><g id="SVGRepo_iconCarrier"> <style type="text/css">  .st0{fill:#D1D1D1;} .st1{fill:#743B80;}  </style> <path class="st0" d="M81.683,254.807c-6.234,0-11.43-2.722-14.255-7.467s-2.743-10.609,0.227-16.09 c0.322-0.594,0.703-1.153,1.138-1.671l36.766-43.731v-73.885H58.5c-11.028,0-20-8.972-20-20v-9.396c0-11.028,8.972-20,20-20h47.058 V24.695c0-11.028,8.972-20,20-20h6.639c11.028,0,20,8.972,20,20v37.872H196.5c11.028,0,20,8.972,20,20v9.396 c0,11.028-8.972,20-20,20h-44.303v73.884l36.768,43.732c0.435,0.518,0.816,1.077,1.138,1.672c2.97,5.48,3.053,11.345,0.227,16.09 c-2.825,4.744-8.021,7.466-14.255,7.466H81.683z"></path> <path class="st1" d="M196.5,72.567h-44.303c-5.5,0-10-4.5-10-10V24.695c0-5.5-4.5-10-10-10h-6.639c-5.5,0-10,4.5-10,10v37.872 c0,5.5-4.5,10-10,10H58.5c-5.5,0-10,4.5-10,10v9.396c0,5.5,4.5,10,10,10h47.058c5.5,0,10,4.5,10,10v77.53l-39.111,46.521 c-2.62,4.835-0.264,8.792,5.236,8.792h94.391c5.5,0,7.856-3.956,5.236-8.792l-39.113-46.522v-77.529c0-5.5,4.5-10,10-10H196.5 c5.5,0,10-4.5,10-10v-9.396C206.5,77.067,202,72.567,196.5,72.567z"></path> </g></svg></span></p>
+                <br>
+                <h3 style="font-size: 1.6rem; color: var(--lila-soft); font-style: italic;">Padrinos del novio</h3>
+                <p class="padres-nombres" style="font-size: 1.3rem;">Ingrid Saavedra Fre<br>Jimmy Gómez Trujillo</p>
             </div>
         </div>
     </section>
@@ -188,7 +204,7 @@
             <strong>Damas:</strong> Vestidos (reservando el color blanco exclusivamente para la novia).
         </p>
 
-        <div class="caja-nota" style="background-color: var(--lila-bg); padding: 25px; border-radius: 15px; border: 1px dashed var(--lila-soft); margin: 0 auto; max-width: 550px;">
+        <div class="caja-nota">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--morado-dark); margin-bottom: 10px;">
                 <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
                 <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
@@ -222,7 +238,7 @@
             El mejor regalo es que estés presente en este día tan esperado, al realizar un obsequio preferiríamos una contribución en dinero, que nos ayudará a construir nuestro hogar juntos y a comenzar esta nueva etapa en nuestra vida.
         </p>
 
-        <div class="caja-cuenta" style="background-color: var(--lila-bg); padding: 25px; border-radius: 15px; border: 1px dashed var(--lila-soft); margin: 0 auto 30px auto; max-width: 500px;">
+        <div class="caja-nota">
             <p style="font-weight: bold; color: var(--morado-dark); margin-bottom: 10px;">Cuenta:</p>
             <p style="font-size: 1.3rem; color: var(--texto-general); margin: 0;">
                 Hector  Espinosa Morales<br>
@@ -235,7 +251,7 @@
         </div>
 
         <p style="font-style: italic; max-width: 700px; margin: 0 auto; line-height: 1.8;">
-            Agradecemos de antemano su generosidad y estamos ansiosos por celebrar con todos ustedes.
+            <br>Agradecemos de antemano su generosidad y estamos ansiosos por celebrar con todos ustedes.
         </p>
 
     </section>
